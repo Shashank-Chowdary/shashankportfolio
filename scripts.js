@@ -5,17 +5,27 @@ document.addEventListener("DOMContentLoaded", function() {
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
-        section.style.opacity = 0;
-        section.style.transform = 'translateY(20px)';
-        section.style.display = 'none';
+        section.classList.remove('active');
     });
 
     const activeSection = document.getElementById(sectionId);
     if (activeSection) {
-        activeSection.style.display = 'block';
-        setTimeout(() => {
-            activeSection.style.opacity = 1;
-            activeSection.style.transform = 'translateY(0)';
-        }, 50);
+        activeSection.classList.add('active');
+        // Apply dynamic background color and shadow if not already set
+        if (!activeSection.dataset.bgColor) {
+            const bgColor = getRandomColor();
+            activeSection.dataset.bgColor = bgColor;
+            activeSection.style.backgroundColor = bgColor;
+            activeSection.style.boxShadow = `0 0 20px ${bgColor}`;
+        }
     }
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
