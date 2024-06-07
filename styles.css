@@ -1,172 +1,109 @@
-/* Updated CSS with removed dynamic changing colors */
-
-/* General styles */
-body,
-html {
-    height: 100%;
+body, html {
     margin: 0;
+    padding: 0;
     font-family: 'Roboto', sans-serif;
-    color: #333; /* Dark gray */
+    height: 100%;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: 100%;
-    background-color: #f8f9fa; /* Light gray */
 }
 
-/* Header styles */
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 header {
-    background: linear-gradient(135deg, #3498db, #2c3e50); /* Gradient blue */
+    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     color: #fff;
-    padding: 2rem 0;
+    padding: 20px 0;
     text-align: center;
-    position: relative;
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    transition: transform 0.3s ease;
 }
 
 .profile-pic {
-    width:30%;
-    height:20%;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 100%;
+    height: 20%;
+    width: 300px;
+    object-fit:fill;
+    transition: transform 0.1s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05); /* Slightly larger on hover */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Slightly darker shadow on hover */
-}
-
-.profile-info {
-    flex: 1;
-    text-align: left;
-    margin-right: 20px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-header p {
-    margin: 0.5rem 0 0;
-    font-size: 1.2rem;
-}
-
-/* Navigation styles */
-nav {
-    background-color: #343a40; /* Dark gray */
-    width: 100%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 15px 20px;
-    display: block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #495057; /* Dark gray (hover) */
     transform: scale(1.1);
 }
 
-/* Container styles */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 15px;
-    box-sizing: border-box;
+nav .container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* Section styles */
-.section {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    box-sizing: border-box;
-    opacity: 1;
-    transform: translateY(0);
-    display: none;
-}
-
-.section.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section h2 {
-    margin-top: 0;
-}
-
-.section ul {
+nav ul {
     list-style-type: none;
     padding: 0;
-}
-
-.section ul li {
-    margin: 10px 0;
-    padding-left: 15px;
-    position: relative;
-}
-
-.section ul li::before {
-    content: "\2022";
-    color: #007bff; /* Blue */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-/* Footer styles */
-footer {
-    background-color: #343a40; /* Dark gray */
-    color: #fff;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: auto;
-    width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    display: inline-flex; /* Display items inline */
+    gap: 10px; /* Add gap between items */
 }
 
-a {
-    color: #007bff; /* Blue */
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
     text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #3f8e97;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
-a:hover {
-    text-decoration: underline;
+nav ul li a:hover {
+    background-color: #a4408e;
+    transform: scale(1.1);
+}
+
+main {
+    flex-grow: 1;
+    padding-bottom: 40px; /* Add padding to the bottom of main content */
+}
+
+.section {
+    display: none;
+    padding: 20px; /* Add padding inside sections */
+    margin-bottom: 20px; /* Add margin at the bottom of each section */
+    max-height: 70vh; /* Allow enough space for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    text-align: justify; /* Justify text within sections */
+    background-color: #f0f0f0; /* Set background color */
+    box-shadow: 0 0 10px #ccc; /* Set box shadow */
+}
+
+h2 {
+    border-bottom: 2px solid #234e51;
+    padding-bottom: 5px;
+}
+
+#download {
+    display: none; /* Ensures the section is hidden initially */
+}
+
+footer {
+    background: #793979;
+    color: #f6e7e7;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px; /* Add margin at the top of the footer */
 }
