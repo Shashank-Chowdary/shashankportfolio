@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
-
 function showSection(sectionId) {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => {
