@@ -15,15 +15,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.style.display = 'none';
-        section.classList.remove('animated'); // Reset animation
-    });
-    const activeSection = document.getElementById(sectionId);
-    if (activeSection) {
-        activeSection.style.display = 'block';
-        activeSection.classList.add('animated'); // Trigger animation
-    }
+
+function downloadPDF() {
+    const link = document.createElement('a');
+    link.href = 'resume.pdf'; // Replace with the correct path to your PDF file
+    link.download = 'resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    alert('Thanks for downloading my resume!');
 }
