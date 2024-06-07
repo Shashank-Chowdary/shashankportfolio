@@ -36,3 +36,9 @@ function downloadPDF() {
 
     alert('Thanks for downloading my resume!');
 }
+
+function restartVideo() {
+    const video = document.getElementById('bg-video');
+    video.currentTime = 0;
+    video.play();
+}
