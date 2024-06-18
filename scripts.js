@@ -28,8 +28,8 @@ function showSection(sectionId) {
 
 function downloadPDF() {
     const link = document.createElement('a');
-    link.href = 'resume.pdf'; // Replace with the correct path to your PDF file
-    link.download = 'resume.pdf';
+    link.href = 'Pentala Shashank Resume.pdf'; // Replace with the correct path to your PDF file
+    link.download = 'Pentala Shashank Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
